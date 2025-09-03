@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="de7bb90a-c9e6-4fec-a5de-e5d0ffcc0020" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../test-output/BDD Test Suite/Cucumber Tests.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../test-output/BDD Test Suite/Cucumber Tests.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test-output/BDD Test Suite/Cucumber Tests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../test-output/BDD Test Suite/Cucumber Tests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test-output/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../test-output/emailable-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test-output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../test-output/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test-output/junitreports/TEST-runners.TestRunner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../test-output/junitreports/TEST-runners.TestRunner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../test-output/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../test-output/testng-results.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="32BB9B21ImLHbSCEdLM6xyGHh0G" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="de7bb90a-c9e6-4fec-a5de-e5d0ffcc0020" name="Changes" comment="" />
+      <created>1756883932608</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1756883932608</updated>
+    </task>
+    <servers />
+  </component>
+</project>
