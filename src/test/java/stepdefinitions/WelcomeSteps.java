@@ -4,26 +4,30 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.testng.Assert;
 import pages.WelcomePage;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-
+import Driverfactory.DriverFactory;
+import utilities.ConfigReader;
 import java.util.Properties;
 
-import org.testng.Assert;
-
-import Driverfactory.DriverFactory;
-import pages.LoginPage;
-import utilities.ConfigReader;
-
-public class WelcomeSteps extends DriverFactory{
-	WelcomePage welcomePage = new WelcomePage(DriverFactory.getDriver());
-	Properties prop = new ConfigReader().intializeProperties();
-	
-	@Then("I should see the welcome message {string}")
-    public void i_should_see_the_welcome_message(String expected) {
-       // boolean flag = new WelcomePage(DriverFactory.getDriver()).getWelcomeMessage();
-       // Assert.assertEquals(actual.trim(), expected);
-		welcomePage.getWelcomeMessage();
+public class WelcomeSteps {
+    
+    private WelcomePage welcomePage;
+    private Properties prop;
+    
+    public WelcomeSteps() {
+        this.welcomePage = new WelcomePage(DriverFactory.getDriver());
+        this.prop = new ConfigReader().intializeProperties();
+    }
+    
+    @Then("I should see the welcome message {string}")
+    public void i_should_see_the_welcome_message(String expectedMessage) {
+        // Wait for and verify the welcome message is displayed
+        boolean isDisplayed = welcomePage.isWelcomeMessageDisplayed();
+        Assert.assertTrue(isDisplayed, "Welcome message should be displayed");
+        
+        // Also verify the text content if needed
+        String actualText = welcomePage.getWelcomeMessageText();
+        Assert.assertTrue(actualText.contains(expectedMessage), 
+            "Expected welcome message to contain: " + expectedMessage + " but was: " + actualText);
     }
     
     @And("I click on Get Started button")
@@ -31,9 +35,3 @@ public class WelcomeSteps extends DriverFactory{
         welcomePage.clickGetStarted();
     }
 }
-
-
-
-
-
-

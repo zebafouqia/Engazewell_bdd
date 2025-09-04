@@ -2,12 +2,14 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-import utilities.WaitHelper;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 
 public class LoginPage {
     private WebDriver driver;
-    private WaitHelper wait;
+    private WebDriverWait wait;
     
     private final By username = By.xpath("//input[@name='email']");   
     private final By password = By.xpath("//input[@name='password']");
@@ -15,23 +17,28 @@ public class LoginPage {
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WaitHelper(driver); // uses timeout from config.properties
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
-   
-    public void login(String user, String pass)  {
-    	try {
-			Thread.sleep(2000);
-			driver.findElement(username).sendKeys(user);
-	        Thread.sleep(2000);
-	        driver.findElement(password).sendKeys(pass);
-	        driver.findElement(loginBtn).click();
-	        Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        
+    public void login(String user, String pass) {
+        try {
+            // Enter username
+            WebElement usernameElement = wait.until(ExpectedConditions.visibilityOfElementLocated(username));
+            usernameElement.clear();
+            usernameElement.sendKeys(user);
+            
+            // Enter password
+            WebElement passwordElement = wait.until(ExpectedConditions.visibilityOfElementLocated(password));
+            passwordElement.clear();
+            passwordElement.sendKeys(pass);
+            
+            // Click login button
+            WebElement loginButtonElement = wait.until(ExpectedConditions.elementToBeClickable(loginBtn));
+            loginButtonElement.click();
+            
+        } catch (Exception e) {
+            System.out.println("Login failed: " + e.getMessage());
+            throw new RuntimeException("Login process failed: " + e.getMessage());
+        }
     }
 }
- 
