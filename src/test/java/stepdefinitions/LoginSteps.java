@@ -9,7 +9,7 @@ import Driverfactory.DriverFactory;
 import pages.LoginPage;
 import utilities.ConfigReader;
 
-public class LoginSteps {
+public class LoginSteps extends DriverFactory{
     
     private LoginPage loginPage;
     private Properties prop;

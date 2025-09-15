@@ -9,17 +9,16 @@ import io.cucumber.testng.CucumberOptions;
     features = "src/test/resources/features",
     glue = {"stepdefinitions"},
     plugin = {
-        "pretty",
-        "html:target/cucumber-report.html",
+        "pretty","html:target/cucumber-report.html",
         "json:target/cucumber.json"
     },
     monochrome = true
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
     // leave empty
-	  @Override
-	    @DataProvider(parallel = false)
-	    public Object[][] scenarios() {
-	        return super.scenarios();  // ✅ ensures TestNG sees scenarios as tests
-	    }
+//	  @Override
+//	    @DataProvider(parallel = false)
+//	    public Object[][] scenarios() {
+//	        return super.scenarios();  // ✅ ensures TestNG sees scenarios as tests
+	    //}
 }
