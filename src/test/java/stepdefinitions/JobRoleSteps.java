@@ -51,4 +51,46 @@ public class JobRoleSteps {
         List<String> expectedHeaders = List.of(col1, col2, col3, col4, col5, col6);
       //  Assert.assertEquals(jobRolePage.getTableHeaders(), expectedHeaders, "Table headers do not match the expected list.");
     }
+    
+
+@Then("I click on AddjobRole button")
+public void i_click_on_addjob_role_button() {
+    // Write code here that turns the phrase above into concrete actions
+   // throw new io.cucumber.java.PendingException();
+	jobRolePage.clickOnAddJobRoleButton();
+	
+}
+
+@Then("I should see the form CreateNewJobRole")
+public void i_should_see_the_form_create_new_job_role() {
+    // Write code here that turns the phrase above into concrete actions
+  //  throw new io.cucumber.java.PendingException();
+	boolean flag = jobRolePage.createNewJobRoleFormIsDisplayed();
+	Assert.assertEquals(true, flag, "form is not displayed");
+}
+
+@Then("I enter the details the JobRole")
+public void i_enter_the_details_the_job_role() {
+    // Write code here that turns the phrase above into concrete actions
+    //throw new io.cucumber.java.PendingException();
+}
+
+@Then("I enter Description")
+public void i_enter_description() {
+    // Write code here that turns the phrase above into concrete actions
+    //throw new io.cucumber.java.PendingException();
+}
+
+@Then("I click on save button")
+public void i_click_on_save_button() {
+    // Write code here that turns the phrase above into concrete actions
+    //throw new io.cucumber.java.PendingException();
+}
+
+@Then("the job role  created success message is displayed")
+public void the_job_role_created_success_message_is_displayed() {
+    // Write code here that turns the phrase above into concrete actions
+   // throw new io.cucumber.java.PendingException();
+}
+
 }

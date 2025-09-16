@@ -21,6 +21,8 @@ public class JobRolePage {
     private final By searchBar = By.xpath("//input[@placeholder='Search']");
     private final By addJobOpeningButton = By.xpath("//*[text()='Add Job Role']");
     private final By tableHeaders = By.xpath("//div[@class='tabulator-header']//div[@role='columnheader']");
+    private final By createNewJobRoleForm = By.xpath("//h2[text()='Create New Job Role']");
+    private final By jobRoleField = By.xpath("//label[text()='Job Role']");
 
     public JobRolePage(WebDriver driver) {
         this.driver = driver;
@@ -60,4 +62,27 @@ public class JobRolePage {
         List<WebElement> headers = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(tableHeaders));
         return headers.stream().map(WebElement::getText).collect(Collectors.toList());
     }
+    public void clickOnAddJobRoleButton() {
+    
+    	wait.until(ExpectedConditions.elementToBeClickable(addJobOpeningButton)).click();
+    }
+    public boolean  createNewJobRoleFormIsDisplayed() {
+    	return wait.until(ExpectedConditions.elementToBeClickable(createNewJobRoleForm)).isDisplayed();
+    }
+    
+    public void enterJobRole() {
+    	//wait.until(ExpectedConditions.visibilityOfElementLocated(jobRoleField));
+    	//jobRoleField.clear();
+    	//jobRoleField.
+    	 By jobRoleFieldfield = By.xpath("//label[text()='Job Role']");
+         wait.until(ExpectedConditions.elementToBeClickable(jobRoleField)).clear();
+         
+         
+         
+         
+         
+         
+    }
+    
+    
 }

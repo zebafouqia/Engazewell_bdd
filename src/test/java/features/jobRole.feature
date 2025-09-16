@@ -19,3 +19,10 @@ Feature: Job Role Management
     And I should see a search bar
     And I should see the "+ Add Job Opening" button
     And I should see a table with columns "Edit", "Name", "Organization Name", "Description", "Active", and "Delete"
+    And I click on AddjobRole button 
+    Then I should see the form CreateNewJobRole
+    And I enter the details the JobRole
+    And I enter Description
+    And I click on save button 
+    Then the job role  created success message is displayed 
+    
