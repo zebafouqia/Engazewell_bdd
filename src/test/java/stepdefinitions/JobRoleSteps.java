@@ -70,27 +70,38 @@ public void i_should_see_the_form_create_new_job_role() {
 }
 
 @Then("I enter the details the JobRole")
-public void i_enter_the_details_the_job_role() {
+public void i_enter_the_details_the_job_role() throws InterruptedException {
     // Write code here that turns the phrase above into concrete actions
     //throw new io.cucumber.java.PendingException();
+	jobRolePage.enterJobRole();
 }
 
 @Then("I enter Description")
-public void i_enter_description() {
+public void i_enter_description() throws InterruptedException {
     // Write code here that turns the phrase above into concrete actions
     //throw new io.cucumber.java.PendingException();
+	jobRolePage.generateDescriptionWithShortcut();
+	
 }
 
+@Then("I see the success pop up displays for jobRole")
+public void i_see_the_success_pop_up_displays_for_jobRole() {
+	//jobRolePage.isDescriptionGeneratedSuccessfully();
+}
 @Then("I click on save button")
-public void i_click_on_save_button() {
+public void i_click_on_save_button() throws InterruptedException {
     // Write code here that turns the phrase above into concrete actions
     //throw new io.cucumber.java.PendingException();
+	jobRolePage.clickSave();
 }
 
 @Then("the job role  created success message is displayed")
 public void the_job_role_created_success_message_is_displayed() {
     // Write code here that turns the phrase above into concrete actions
    // throw new io.cucumber.java.PendingException();
+	jobRolePage.jobRoleCreatedSuccessPopup();
 }
+
+
 
 }

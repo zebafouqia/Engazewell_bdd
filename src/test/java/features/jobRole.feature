@@ -23,6 +23,7 @@ Feature: Job Role Management
     Then I should see the form CreateNewJobRole
     And I enter the details the JobRole
     And I enter Description
+    And I see the success pop up displays for jobRole
     And I click on save button 
     Then the job role  created success message is displayed 
     
