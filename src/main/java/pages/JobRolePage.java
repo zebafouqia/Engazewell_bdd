@@ -47,8 +47,7 @@ public class JobRolePage {
     private final By joditIframe    = By.cssSelector("iframe.jodit-wysiwyg_iframe");
     private final By joditEditable  = By.xpath(
         "(//div[contains(@class,'jodit-wysiwyg') and @contenteditable='true' and " +
-        "not(ancestor-or-self::*[@style[contains(.,'display: none')]])])[1]"
-    );
+        "not(ancestor-or-self::*[@style[contains(.,'display: none')]])])[1]");
     
 //    public JobRolePage(WebDriver driver) {
 //        this.driver = driver;

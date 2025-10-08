@@ -2,6 +2,7 @@ package utilities;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -37,7 +38,7 @@ public class ElementUtils {
 	private static Logger logger = LogManager.getLogger(ElementUtils.class);
     WebDriver driver;
     long durationInSeconds = CommonUtils.EXPLICIT_WAIT_BASIC_TIME;
-
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     public ElementUtils(WebDriver driver) {
 
         this.driver = driver;
@@ -84,16 +85,16 @@ public class ElementUtils {
         }
     }
     
-    public void clickElement(WebElement element) {
+    public void clickElement(By jobOpening) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-            WebElement clickableElement = wait.until(ExpectedConditions.elementToBeClickable(element));
+            WebElement clickableElement = wait.until(ExpectedConditions.elementToBeClickable(jobOpening));
             clickableElement.click();
         } catch (Exception e) {
             try {
                 JavascriptExecutor js = (JavascriptExecutor) driver;
-                js.executeScript("arguments[0].scrollIntoView(true);", element);
-                js.executeScript("arguments[0].click();", element);
+                js.executeScript("arguments[0].scrollIntoView(true);", jobOpening);
+                js.executeScript("arguments[0].click();", jobOpening);
             } catch (Exception jsException) {
                 throw new RuntimeException("Failed to click the element using both Selenium and JavaScript click.", jsException);
             }
@@ -166,6 +167,87 @@ public class ElementUtils {
         logger.info("selectOptionInDropdown(), invoked , value selected from dropdown " + dropDownOption);
     }
 
+    public void enterText(By locator, String text) {
+    	
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        element.clear();
+        element.sendKeys(text);
+    }
+    //Select from Standard Dropdown (<select> tag)
+    // usage : selectDropdownByValue(By.id("jobType"), "FullTime");
+    public void selectDropdownByValue(By locator, String value) {
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        Select select = new Select(element);
+        select.selectByValue(value);
+    }
+
+    //Select from Custom Dropdown (Keyboard/Type + Enter)
+    //selectCustomDropdown(By.xpath("//div[@role='combobox']"), "Manager");
+    public void selectCustomDropdown(By locator, String value) {
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        element.click();
+        element.sendKeys(value);
+        element.sendKeys(Keys.ENTER);
+    }
+
+    //Enter Date (Typing in Date Field)
+    //enterDate(By.id("postingDate"), "2025-10-07");
+    public void enterDate(By locator, String date) {
+        WebElement dateField = wait.until(ExpectedConditions.elementToBeClickable(locator));
+        dateField.click();
+        dateField.sendKeys(Keys.CONTROL + "a");
+        dateField.sendKeys(Keys.DELETE);
+        dateField.sendKeys(date);
+        dateField.sendKeys(Keys.ENTER);
+    }
+
     
+    //Upload File
+    //uploadFile(By.id("jdUpload"), "C:\\Documents\\JD.pdf");
+    public void uploadFile(By locator, String filePath) {
+        WebElement fileInput = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        fileInput.sendKeys(filePath);
+    }
+
+    
+    //Scroll to Element (for long forms)
+    //scrollToElement(By.id("salaryInput"));
+    
+    public void scrollToElement(By locator) {
+        WebElement element = driver.findElement(locator);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+//Perform Keyboard Actions (Generic)
+//pressKeys(Keys.TAB, Keys.ARROW_DOWN, Keys.ENTER);
+    
+    public void pressKeys(Keys... keys) {
+        Actions actions = new Actions(driver);
+        for (Keys key : keys) {
+            actions.sendKeys(key).perform();
+        }
+    }
+
+    
+//Wait for Element to Be Visible
+//waitForElement(By.id("locationInput"), 10);
+    
+    public WebElement waitForElement(By locator, int timeoutInSeconds) {
+        WebDriverWait localWait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
+        return localWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    
+    //Get Field Value
+    //String title = getFieldValue(By.id("jobTitle"));
+   // Assert.assertEquals(title, "Senior Software Engineer");
+    public String getFieldValue(By locator) {
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return element.getAttribute("value");
+    }
+
+    
+    
+    
+
 
 }
