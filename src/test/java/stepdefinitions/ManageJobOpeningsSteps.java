@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -40,85 +42,107 @@ public void the_job_opening_screen_should_be_displayed() {
 @Then("I should see the AddJobOpening button")
 public void i_should_see_the_add_job_opening_button() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+    //throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.verifyAddJobOpeningButtonISDisplayed();
+	
 }
 
-@Then("I should see a table with columns {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string} and {string}")
-public void i_should_see_a_table_with_columns_and(String string, String string2, String string3, String string4, String string5, String string6, String string7, String string8, String string9, String string10, String string11) {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
+//@Then("I should see a table with columns {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string}, {string} and {string}")
+//public void i_should_see_a_table_with_columns_and(String string, String string2, String string3, String string4, String string5, String string6, String string7, String string8, String string9, String string10, String string11) {
+//    // Write code here that turns the phrase above into concrete actions
+//    //throw new io.cucumber.java.PendingException();
+//	 List<String> expectedHeaders = List.of(string, string2, string3, string4, string5, string6,string7,string8,string9,string10,string11);
+//	 Assert.assertEquals(manageJobopeningpage.isTableDisplayedWithAllHeaders(), expectedHeaders, "Table headers do not match the expected list.");
+//}
 
 @Then("the user clicks the AddJobOpening button")
 public void the_user_clicks_the_add_job_opening_button() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+   // throw new io.cucumber.java.PendingException()
+	manageJobopeningpage.clickJobOpeningButton();
+
 }
 
 @Then("the CreateNewJobOpening form should open")
 public void the_create_new_job_opening_form_should_open() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+   // throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.verifyCreateNewJobOpeningFormIsDisplayed();
 }
 
 @Then("the form should display {string} and {string} buttons")
 public void the_form_should_display_and_buttons(String string, String string2) {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+   // throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.verifySaveandCancelButtonsAreVisible();
 }
 
 @Then("user click on Jobrole field and dorpdown opens")
 public void user_click_on_jobrole_field_and_dorpdown_opens() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+   // throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.userClicksOnJobRoleFIeld();
 }
 
 @Then("user selects the jobrole")
 public void user_selects_the_jobrole() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+   // throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.selectJobRole("Backend Lead");
 }
 
 @Then("user click on location enter the location name and select the correct location")
 public void user_click_on_location_enter_the_location_name_and_select_the_correct_location() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+   // throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.selectLocationSuggestion("Hyderabad", "Hyderabad, IN");
 }
 
 @Then("user enters minExperience")
 public void user_enters_min_experience() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+   // throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.enterMinExp("3");
 }
 
 @Then("user enters MaxExperience")
 public void user_enters_max_experience() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+   // throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.enterMaxExp("5");
 }
-
+@Then("user enters qualification")
+public void user_enters_qualification() {
+	manageJobopeningpage.enterQualification();
+}
 @Then("user double click on shortJD and enters ShortJD by keyboard controlG")
-public void user_double_click_on_short_jd_and_enters_short_jd_by_keyboard_control_g() {
+public void user_double_click_on_short_jd_and_enters_short_jd_by_keyboard_control_g() throws InterruptedException {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+    //throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.enterShortJd();
+	
 }
 
 @Then("user double clicks on responsibilities and enter responsibilities by keyboard controlG")
 public void user_double_clicks_on_responsibilities_and_enter_responsibilities_by_keyboard_control_g() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+   // throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.responsibilities();
+	
 }
 
 @Then("user double clicks on Primary skills and enters primary skills by keyboard controlG")
 public void user_double_clicks_on_primary_skills_and_enters_primary_skills_by_keyboard_control_g() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+    //throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.primarySkills();
 }
 
 @Then("user double clicks on secondary skills and enters secondary skills by keyboard controlG")
 public void user_double_clicks_on_secondary_skills_and_enters_secondary_skills_by_keyboard_control_g() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+   // throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.secondarySkills();
 }
 
 @Then("user clicks on total openings and entet total openings")

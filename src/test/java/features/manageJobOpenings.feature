@@ -16,19 +16,20 @@ Feature: Manage Job Openings
     Then the JobOpening screen should be displayed
     #And I should see a search bar
     And I should see the AddJobOpening button 
-    #And I should see a table with columns "Edit", "Job role", "Job ID", "Location", "Primary Skills", "Secondary Skills", "Employment Type", "Status", "Total Openings", "Updated On" and "Updated By" 
-    #And the user clicks the AddJobOpening button
-    #Then the CreateNewJobOpening form should open
-    #And the form should display "Save" and "Cancel" buttons
-    #And user click on Jobrole field and dorpdown opens 
-    #And user selects the jobrole
-    #And user click on location enter the location name and select the correct location 
-    #And user enters minExperience 
-    #And user enters MaxExperience
-    #And user double click on shortJD and enters ShortJD by keyboard controlG
-    #And user double clicks on responsibilities and enter responsibilities by keyboard controlG
-    #And user double clicks on Primary skills and enters primary skills by keyboard controlG
-    #And user double clicks on secondary skills and enters secondary skills by keyboard controlG
+  # And I should see a table with columns "Edit", "Job role", "Job ID", "Location", "Primary Skills", "Secondary Skills", "Employment Type", "Status", "Total Openings", "Updated On" and "Updated By" 
+    And the user clicks the AddJobOpening button
+    Then the CreateNewJobOpening form should open
+    And the form should display "Save" and "Cancel" buttons
+    And user click on Jobrole field and dorpdown opens 
+    And user selects the jobrole
+    And user click on location enter the location name and select the correct location 
+    And user enters minExperience 
+    And user enters MaxExperience
+    And user enters qualification
+    And user double click on shortJD and enters ShortJD by keyboard controlG
+    And user double clicks on responsibilities and enter responsibilities by keyboard controlG
+    And user double clicks on Primary skills and enters primary skills by keyboard controlG
+   # And user double clicks on secondary skills and enters secondary skills by keyboard controlG
     #And user clicks on total openings and entet total openings 
     #And user clicks on employment type and selects employment type
     #And user clicks on duration and selects duration 

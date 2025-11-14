@@ -36,7 +36,7 @@ import io.netty.handler.timeout.TimeoutException;
 
 public class ElementUtils {
 	private static Logger logger = LogManager.getLogger(ElementUtils.class);
-    WebDriver driver;
+    private WebDriver driver;
     long durationInSeconds = CommonUtils.EXPLICIT_WAIT_BASIC_TIME;
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     public ElementUtils(WebDriver driver) {
@@ -244,6 +244,8 @@ public class ElementUtils {
         WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return element.getAttribute("value");
     }
+
+	
 
     
     
