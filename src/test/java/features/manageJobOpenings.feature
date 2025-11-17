@@ -29,8 +29,8 @@ Feature: Manage Job Openings
     And user double click on shortJD and enters ShortJD by keyboard controlG
     And user double clicks on responsibilities and enter responsibilities by keyboard controlG
     And user double clicks on Primary skills and enters primary skills by keyboard controlG
-   # And user double clicks on secondary skills and enters secondary skills by keyboard controlG
-    #And user clicks on total openings and entet total openings 
+    And user double clicks on secondary skills and enters secondary skills by keyboard controlG
+    And user clicks on total openings and enter total openings 
     #And user clicks on employment type and selects employment type
     #And user clicks on duration and selects duration 
     #And user clicks on workmode and selects workmode 

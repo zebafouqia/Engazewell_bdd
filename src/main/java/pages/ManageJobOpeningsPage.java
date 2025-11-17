@@ -31,8 +31,8 @@ public class ManageJobOpeningsPage  {
 	    private final By description = By.xpath("(//div[@class='jodit-wysiwyg']//p)[1]");
 	    private  final By shortJD = By.xpath("//textarea[@name='shortJD']");
 	    private final By responsibilities = By.xpath("(//div[@class='jodit-wysiwyg']//p)[2]");
-	    private final By primarySkills = By.xpath("(//div[@class='jodit-wysiwyg']//p)[3]");
-	    private final By secondarySkills = By.xpath("(//div[@class='jodit-wysiwyg']//p)[4]");
+	    private final By primarySkills = By.xpath("(//div[@class='jodit-wysiwyg']//p)[2]");
+	    private final By secondarySkills = By.xpath("(//div[@class='jodit-wysiwyg']//p)[2]");
 	    private final By totalOpenings = By.xpath("//input[@id='totalOpenings']");
 	    private final By employmentType = By.xpath("//label[text()='Employment Type']");
 	    private final By employmentValue = By.xpath("//li[@data-value='Full Time']");
@@ -155,27 +155,16 @@ public class ManageJobOpeningsPage  {
 	    
 	    public void userClicksOnJobRoleFIeld() {
 	    	try {
-		    	//utils.clickElement(jobOpening);
+		    
 	    		Thread.sleep(2000);
-		    		//driver.findElement(jobrolefield).click();
-	    		//wait.until(ExpectedConditions.visibilityOfElementLocated(jobrolefield)).click();
+		    		
 		    	}
 		    	catch(Exception e) {
 		    		System.out.println("jobRoleField did not click ");
 		    		e.printStackTrace();
 		    	}
 	    }
-//	    public void userSelectsJobRole(String roleName) {
-//	    	
-//	    	 String jobRoleDropdownOption = "//ul[@role='listbox']";
-//	         
-//	    	 By optionLocator = By.xpath(String.format(jobRoleDropdownOption, roleName));
-//
-//	    	  wait.until(ExpectedConditions.visibilityOfElementLocated(optionLocator)).click();
-//
-//	     
-//	    }
-//	    
+
 	    
 	    public void selectJobRole(String roleName) {
 	        // 1) Open the dropdown
@@ -213,33 +202,12 @@ public class ManageJobOpeningsPage  {
 	        input.sendKeys(Keys.chord(Keys.CONTROL, "a"));
 	        input.sendKeys(Keys.DELETE);
 	        input.sendKeys(queryText);
-                      //  hyderanad,IN      (//div[@class='MuiBox-root css-ep1tmm']//div//div)[1]
-	      //   2) Wait for the active suggestions listbox to appear
+         
 	        WebElement listbox = wait.until(ExpectedConditions
 	                .visibilityOfElementLocated(By.xpath("(//div[@class='MuiBox-root css-ep1tmm'])[1]")));
 	        
 	        driver.findElement(By.xpath("(//div[@class='MuiBox-root css-ep1tmm']//div//div)[1]")).click();
-//
-//	        // 3) If an exact option is requested, click it within THIS listbox
-//	        if (exactText != null && !exactText.isBlank()) {
-//	            By exact = By.xpath(".//li[@role='option' and normalize-space()='" + exactText + "']");
-//	            wait.until(ExpectedConditions.visibilityOfNestedElementsLocatedBy(listbox, exact));
-//	            WebElement option = listbox.findElement(exact);
-//	            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", option);
-//	            option.click();
-//	        } else {
-//	            // Otherwise pick the first suggestion
-//	            List<WebElement> options = listbox.findElements(By.cssSelector("li[role='option']"));
-//	            if (options.isEmpty()) throw new NoSuchElementException("No location suggestions appeared.");
-//	            WebElement first = options.get(0);
-//	            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", first);
-//	            first.click();
-//	        }
-//
-//	        // 4) Verify selection reflected back in the input (MUI sets input value)
-//	        if (exactText != null && !exactText.isBlank()) {
-//	            wait.until(d -> exactText.equalsIgnoreCase(input.getAttribute("value").trim()));
-//	        }
+
 	    }
 	    
 	    
@@ -261,18 +229,14 @@ public class ManageJobOpeningsPage  {
 	    }
 	    
 	    public void enterShortJd() throws InterruptedException {
-	    //	utils.scrollToElement(shortJD);
-	    		    	 
-	    	// ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 800)");
-	    	// driver.findElement(shortJD);
+	    
 	    	driver.findElement(shortJD).click();
 	    	driver.findElement(shortJD).click();
 	    	
 	    	driver.findElement(shortJD).sendKeys(Keys.chord(Keys.CONTROL, "g"));
 	    	Thread.sleep(5000);
 	    	
-  	    	 //act.doubleClick();
-	         //act.keyDown(Keys.CONTROL).sendKeys("g").keyUp(Keys.CONTROL).perform();
+  	   
 	    	
 	    }
 	    
@@ -281,16 +245,8 @@ public class ManageJobOpeningsPage  {
     public void responsibilities() {
     	try {
     		Thread.sleep(15000);
-//    		WebElement primary=driver.findElement(By.xpath("//p[text()='Primary skills *']"));
-//    		Actions act= new Actions(driver);
-//    		act.scrollToElement(primary).perform();
-//    		Thread.sleep(2000);
-//    		WebElement response=driver.findElement(By.xpath("(//div[@class='jodit-wysiwyg']//p)[2]"));
-//    		act.doubleClick(response).perform();
-//    		Thread.sleep(4000);
-//    	    response.sendKeys(Keys.chord(Keys.CONTROL, "g"));
-//    	    Thread.sleep(8000);
-    		Thread.sleep(5000);
+
+    		//Thread.sleep(5000);
 	    	driver.findElement(responsibilities).click();
 	    	driver.findElement(responsibilities).click();
 	    	
@@ -305,58 +261,7 @@ public class ManageJobOpeningsPage  {
     	
     	
     }
-////		    //	utils.scrollToElement(responsibilities);
-//	    	try {
-//    		Thread.sleep(2000);
-//    	WebElement  resp = driver.findElement(responsibilities);
-//		    		    	 
-//	    	WebElement editor = driver.findElement(By.xpath("(//div[@contenteditable='true'])[1]"));
-//    	((JavascriptExecutor)driver).executeScript("arguments[0].focus();", editor);
-//    	WebElement active = (WebElement)((JavascriptExecutor)driver).executeScript("return document.activeElement;");
-//	active.sendKeys(Keys.chord(Keys.CONTROL, "g"));
-//	resp.sendKeys(Keys.chord(Keys.CONTROL, "g"));
-//
-//	    	// OR using Actions (works more like real keyboard)
-////	    	Actions kb = new Actions(driver);
-////	    	kb.moveToElement(resp).doubleClick()
-////	    	  .keyDown(Keys.CONTROL).sendKeys("g").keyUp(Keys.CONTROL)
-////	    	  .perform();
-////    	 ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 600)");
-//////		    	// driver.findElement(shortJD);
-//////		    	
-//////		    	 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", resp);
-//////	    	 Actions actions = new Actions(driver);
-////	    	 driver.findElement(responsibilities).click();
-////	    	 driver.findElement(responsibilities).sendKeys(Keys.chord(Keys.CONTROL, "g"));
-//	    	 
-////		    	    actions
-////		    	        .moveToElement(resp)
-////	    	        .click()
-////	    	        .keyDown(Keys.CONTROL)
-////	    	        .sendKeys("g")
-////	    	        .keyUp(Keys.CONTROL)
-////	    	        .perform();
-//					Thread.sleep(2000);
-//				
-//		    	    // Click OR double click (if needed)
-////		    	    Actions actions = new Actions(driver);
-////		    	    actions.moveToElement(resp).doubleClick().perform();
-//
-//		    	    // Now send CTRL + G
-//		    	   // resp.sendKeys(Keys.chord(Keys.CONTROL, "g"));
-//	    	} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-////		    	 Actions actions = new Actions(driver);
-////		    	 actions.doubleClick((WebElement) responsibilities);
-//		    	driver.findElement(responsibilities).click();
-//		    	//driver.findElement(responsibilities).click();
-//		    	driver.findElement(responsibilities).sendKeys(Keys.chord(Keys.CONTROL, "g"));
-////	  	    	 //act.doubleClick();
-////		         //act.keyDown(Keys.CONTROL).sendKeys("g").keyUp(Keys.CONTROL).perform();
-////		    	
-//		    }
+
 	    public void primarySkills() {
 	    	try {
 	    		Thread.sleep(15000);
@@ -370,9 +275,10 @@ public class ManageJobOpeningsPage  {
 	    				WebElement primary = wait.until(
 	    						ExpectedConditions.elementToBeClickable(primarySkills));
 	    				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", primary);
-	    				primary.click();
-	    				primary.click();
-	    				primary.sendKeys(Keys.chord(Keys.CONTROL, "g"));
+	    				driver.findElement(primarySkills).click();
+	    				driver.findElement(primarySkills).click();
+	    				driver.findElement(primarySkills).sendKeys(Keys.chord(Keys.CONTROL, "g"));
+	    		    	Thread.sleep(5000);
 	    				success = true;
 	    			} catch (org.openqa.selenium.StaleElementReferenceException stale) {
 	    				if (attempt == 2) {
@@ -386,19 +292,61 @@ public class ManageJobOpeningsPage  {
 	    		System.out.println("could not click primary skills");
 	    	}
 	    }
-	    public void secondarySkills() {
-		    //	utils.scrollToElement(shortJD);
-		    		    	 
-		    	// ((JavascriptExecutor) driver).executeScript("window.scrollBy(0, 800)");
-		    	// driver.findElement(shortJD);
-		    	driver.findElement(secondarySkills).click();
-		    	driver.findElement(secondarySkills).click();
-		    	
-		    	driver.findElement(secondarySkills).sendKeys(Keys.chord(Keys.CONTROL, "g"));
-	  	    	 //act.doubleClick();
-		         //act.keyDown(Keys.CONTROL).sendKeys("g").keyUp(Keys.CONTROL).perform();
-		    	
-		    }
+	    public void secondarySkills() throws InterruptedException {
+		  
+	    	Thread.sleep(15000);
+    		WebElement secondaryheader = driver.findElement(By.xpath("//p[text()='Secondary skills *']"));
+    		Actions act = new Actions(driver);
+    		act.scrollToElement(secondaryheader).perform();
+    		Thread.sleep(4000);
+    		boolean success = false;
+    		for (int attempt = 0; attempt < 3 && !success; attempt++) {
+    			try {
+    				WebElement secondary = wait.until(
+    						ExpectedConditions.elementToBeClickable(secondarySkills));
+    				((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", secondary);
+    				driver.findElement(secondarySkills).click();
+    				driver.findElement(secondarySkills).click();
+    				driver.findElement(secondarySkills).sendKeys(Keys.chord(Keys.CONTROL, "g"));
+    		    	Thread.sleep(5000);
+    				success = true;
+    			} catch (org.openqa.selenium.StaleElementReferenceException stale) {
+    				if (attempt == 2) {
+    					throw stale;
+    					//System.out.println("could not click secondary skills");
+    				}
+    				
+    			}
+    		}
+	    
+    		}
 
+
+	    	
+	    	
+	    	
+	    	
+//	    	try {
+//	    		Thread.sleep(5000);
+//		    	driver.findElement(secondarySkills).click();
+//		    	driver.findElement(secondarySkills).click();
+//		    	
+//		    	driver.findElement(secondarySkills).sendKeys(Keys.chord(Keys.CONTROL, "g"));
+//		    	Thread.sleep(5000);
+//	    }catch(Exception e ) {
+//	    	e.printStackTrace();
+//	    	System.out.println("could not click on secondary skills ");
+//	    }
+	  	    	
+		    	
+		    
+	    public void totalJobOpeningsField(){
+	    	try {
+	    		driver.findElement(totalOpenings).sendKeys("2");
+	    	}
+	    	catch(Exception e ) {
+	    		e.printStackTrace();
+	    	}
+	    }
 
 }

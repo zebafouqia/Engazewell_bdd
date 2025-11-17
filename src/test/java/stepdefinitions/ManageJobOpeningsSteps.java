@@ -142,13 +142,19 @@ public void user_double_clicks_on_primary_skills_and_enters_primary_skills_by_ke
 public void user_double_clicks_on_secondary_skills_and_enters_secondary_skills_by_keyboard_control_g() {
     // Write code here that turns the phrase above into concrete actions
    // throw new io.cucumber.java.PendingException();
-	manageJobopeningpage.secondarySkills();
+	try {
+		manageJobopeningpage.secondarySkills();
+	} catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
 }
 
-@Then("user clicks on total openings and entet total openings")
-public void user_clicks_on_total_openings_and_entet_total_openings() {
+@Then("user clicks on total openings and enter total openings")
+public void user_clicks_on_total_openings_and_enter_total_openings() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+    //throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.totalJobOpeningsField();
 }
 
 @Then("user clicks on employment type and selects employment type")
