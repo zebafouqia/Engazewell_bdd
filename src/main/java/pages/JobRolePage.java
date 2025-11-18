@@ -39,7 +39,7 @@ public class JobRolePage {
     // Locators
     private By descriptionBox = By.xpath("//div[@contenteditable='true']//parent::div//span"); ////div[@contenteditable='true']
     private By successToast = By.xpath("//div[contains(text(),'Description generated successfully')]");
-    private By saveButton = By.xpath("//button[contains(text(),'Save')]");
+    private By saveButton = By.xpath("//button[text()='Save']");
     
     //
     // -- Stable anchors --
@@ -290,6 +290,7 @@ public class JobRolePage {
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.out.println("could not click on Save ");
 		}
     	//JavascriptExecutor JavascriptExecutor = ( JavascriptExecutor)driver;
     	//((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", saveButton);

@@ -1,5 +1,5 @@
 package pages;
-
+import org.openqa.selenium.Keys;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -34,15 +34,15 @@ public class ManageJobOpeningsPage  {
 	    private final By primarySkills = By.xpath("(//div[@class='jodit-wysiwyg']//p)[2]");
 	    private final By secondarySkills = By.xpath("(//div[@class='jodit-wysiwyg']//p)[2]");
 	    private final By totalOpenings = By.xpath("//input[@id='totalOpenings']");
-	    private final By employmentType = By.xpath("//label[text()='Employment Type']");
+	    private final By employmentType = By.xpath("(//div[@class='MuiFormControl-root MuiFormControl-fullWidth css-tpgvqp'])[1]");
 	    private final By employmentValue = By.xpath("//li[@data-value='Full Time']");
-	    private final By durationDropdown = By.xpath("//label[text()='Duration']");
+	    private final By durationDropdown = By.xpath("(//div[@class='MuiFormControl-root MuiFormControl-fullWidth css-tpgvqp'])[2]");
 	    private final By permanent = By.xpath("//ul[@id='mui-170']//li[text()='Permanent']");
-	    private final By workModeDropdown = By.xpath("//span[text()='Work Mode']");
+	    private final By workModeDropdown = By.xpath("(//div[@class='MuiFormControl-root MuiFormControl-fullWidth css-tpgvqp'])[3]");
 	    private final By workfromOffice =By.xpath("//ul[@class='MuiList-root MuiList-padding MuiMenu-list css-r8u8y9']//li[text()='Work From Office']");
-	    private final By statusdropdown = By.xpath("//span[text()='Status']");
-	    private final By statusDropdown = By.xpath("//li[text()='Published']");
-	    private final By department = By.xpath("//span[text()='Department']");
+	    private final By statusdropdown = By.xpath("(//div[@class='MuiFormControl-root MuiFormControl-fullWidth css-tpgvqp'])[4]");
+	    private final By statusDropdownvalue = By.xpath("//li[text()='Published']");
+	    private final By department = By.xpath("//input[@id='department']");
 	    private final By industryType = By.xpath("//input[@name='industryType']");
 	    private final By closebutton = By.xpath("//span[text()='close']");
 	    private final By saveButton = By.xpath("//button[text()='Save']");
@@ -92,20 +92,7 @@ public class ManageJobOpeningsPage  {
 	    	}
 	    }
 	    
-//	    public List<String> isTableDisplayedWithAllHeaders() {
-//	    	
-//	    		 List<WebElement> headers = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(tableHeaders));
-//	    		    JavascriptExecutor js = (JavascriptExecutor) driver;
-//	    		    try {
-//						Thread.sleep(2000);
-//					} catch (InterruptedException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//	    		    js.executeScript("window.scrollBy(1000, 0)"); // scroll right by 500px
-//	    		 return headers.stream().map(WebElement::getText).collect(Collectors.toList());
-//
-//	    }
+
 	  
 	    public void clickJobOpeningButton()
         {
@@ -308,7 +295,7 @@ public class ManageJobOpeningsPage  {
     				driver.findElement(secondarySkills).click();
     				driver.findElement(secondarySkills).click();
     				driver.findElement(secondarySkills).sendKeys(Keys.chord(Keys.CONTROL, "g"));
-    		    	Thread.sleep(5000);
+    		    	Thread.sleep(15000);
     				success = true;
     			} catch (org.openqa.selenium.StaleElementReferenceException stale) {
     				if (attempt == 2) {
@@ -322,24 +309,7 @@ public class ManageJobOpeningsPage  {
     		}
 
 
-	    	
-	    	
-	    	
-	    	
-//	    	try {
-//	    		Thread.sleep(5000);
-//		    	driver.findElement(secondarySkills).click();
-//		    	driver.findElement(secondarySkills).click();
-//		    	
-//		    	driver.findElement(secondarySkills).sendKeys(Keys.chord(Keys.CONTROL, "g"));
-//		    	Thread.sleep(5000);
-//	    }catch(Exception e ) {
-//	    	e.printStackTrace();
-//	    	System.out.println("could not click on secondary skills ");
-//	    }
-	  	    	
-		    	
-		    
+    
 	    public void totalJobOpeningsField(){
 	    	try {
 	    		driver.findElement(totalOpenings).sendKeys("2");
@@ -348,5 +318,98 @@ public class ManageJobOpeningsPage  {
 	    		e.printStackTrace();
 	    	}
 	    }
+	    
+
+
+	    public void selectEmploymentType() {
+	    	try {
+				Thread.sleep(3000);
+				 driver.findElement(employmentType).click();
+				 driver.findElement(employmentValue).click();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.println("could not click on employemt type");
+			}
+	       
+	    }
+	    
+	    public void selectDuration() {
+	    	try {
+	    		Thread.sleep(2000);
+	    		driver.findElement(durationDropdown).click();
+	    		driver.findElement(By.xpath("//li[text()='Permanent']")).click();
+	    	}
+	    	catch(Exception e ) {
+	    		e.printStackTrace();
+	    		System.out.println("cound not enter duration");
+	    		
+	    	}
+	    	
+	    }
+	    
+	    public void selectWorkMode() {
+	    	try {
+	    		Thread.sleep(2000);
+	    		driver.findElement(workModeDropdown).click();
+	    		driver.findElement(workfromOffice).click();
+	    	}
+	    	catch(Exception e ) {
+	    		
+	    	}
+	    }
+	     public void selectStatus() {
+	    	 try {
+	    		 Thread.sleep(2000);
+	    		 driver.findElement(statusdropdown).click();
+	    		 driver.findElement(statusDropdownvalue).click();
+	    	 }
+	    	 catch(Exception e) {
+	    		 
+	    	 }
+	     }
+	     public void selectDepatment() {
+	    	 try {
+	    		 Thread.sleep(2000);
+	    		 driver.findElement(department).click();
+	    		 driver.findElement(department).sendKeys("IT");
+	    	 }
+	    	 catch(Exception e) {
+	    		 
+	    	 }
+	     }
+	     
+	     public void selectIndustryType() {
+	    	 try {
+	    		 Thread.sleep(2000);
+	    		 driver.findElement(industryType).click();
+	    		 driver.findElement(industryType).sendKeys("IT");
+	    	 }
+	    	 catch(Exception e) {
+	    		 
+	    	 }
+	     }
+	     public void tags() {
+	    	 try {
+	    		 Thread.sleep(2000);
+	    		 
+	    		 WebElement tag = driver.findElement(tags);
+	    		 String tagValue = "T1";
+	    		 tag.sendKeys(tagValue);
+	    		 
+	    		// driver.findElement(tags).click();
+//	    		 driver.findElement(tags).click();
+//	    		 driver.findElement(tags).sendKeys("T1");
+//	    		 driver.findElement(tags).sendKeys(Keys.ENTER);
+	    		 
+	    	 }
+	    	 catch(Exception e) {
+	    		 e.printStackTrace();
+	    	 }
+	     }
+	     
+	    
+	    
+	    
 
 }

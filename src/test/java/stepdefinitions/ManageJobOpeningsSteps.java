@@ -1,17 +1,12 @@
 package stepdefinitions;
 
-import java.util.List;
-
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import Driverfactory.DriverFactory;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pages.JobRolePage;
 import pages.LoginPage;
 import pages.ManageJobOpeningsPage;
-import utilities.ElementUtils;
 
 public class ManageJobOpeningsSteps {
 	//private ElementUtils utils;
@@ -160,43 +155,52 @@ public void user_clicks_on_total_openings_and_enter_total_openings() {
 @Then("user clicks on employment type and selects employment type")
 public void user_clicks_on_employment_type_and_selects_employment_type() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+   // throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.selectEmploymentType();
+	
 }
 
 @Then("user clicks on duration and selects duration")
 public void user_clicks_on_duration_and_selects_duration() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+    //throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.selectDuration();
 }
 
 @Then("user clicks on workmode and selects workmode")
 public void user_clicks_on_workmode_and_selects_workmode() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+    //throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.selectWorkMode();
 }
 
 @Then("user clicks on status and selects status")
 public void user_clicks_on_status_and_selects_status() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+   // throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.selectStatus();
 }
 
 @Then("user clicks on department and enter department")
 public void user_clicks_on_department_and_enter_department() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+  //  throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.selectDepatment();
+	
 }
 
 @Then("user clicks on industry type and enter industry")
 public void user_clicks_on_industry_type_and_enter_industry() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+   // throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.selectIndustryType();
 }
 
 @Then("user clicks on tags and enter tags and hit enter")
 public void user_clicks_on_tags_and_enter_tags_and_hit_enter() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+   // throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.tags();
 }
 
 @Then("user clicks on vendors and select")
