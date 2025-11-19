@@ -46,9 +46,10 @@ public class ManageJobOpeningsPage  {
 	    private final By industryType = By.xpath("//input[@name='industryType']");
 	    private final By closebutton = By.xpath("//span[text()='close']");
 	    private final By saveButton = By.xpath("//button[text()='Save']");
-	    private final By tags = By.xpath("//label[text()='Tags']");
+	    private final By tags = By.xpath("//input[@placeholder='Enter the tags']");
 	    private final By vendors = By.xpath("//input[@placeholder='Enter the vendors']");
 	    private final By tableHeaders =By.xpath("//div[@class='tabulator-header']//div[@role='columnheader']");
+	    private final By save =By.xpath("//button[text()='Save']");
 	    
 	   
 	    
@@ -396,7 +397,7 @@ public class ManageJobOpeningsPage  {
 	    		 WebElement tag = driver.findElement(tags);
 	    		 String tagValue = "T1";
 	    		 tag.sendKeys(tagValue);
-	    		 
+	    		 driver.findElement(tags).sendKeys(Keys.ENTER);
 	    		// driver.findElement(tags).click();
 //	    		 driver.findElement(tags).click();
 //	    		 driver.findElement(tags).sendKeys("T1");
@@ -406,6 +407,26 @@ public class ManageJobOpeningsPage  {
 	    	 catch(Exception e) {
 	    		 e.printStackTrace();
 	    	 }
+	     }
+	     
+	     public void vendors() {
+	    	 try {
+	    		 Thread.sleep(1000);
+	    		 driver.findElement(vendors).click();
+	    	 driver.findElement(By.xpath("//ul[@id='tags-outlined-listbox']//li[text()='empowering']")).click();
+	    	 }
+	    	 catch(Exception e) {
+	    		 
+	    	 }
+	     }
+	     
+	     public void save() {
+	    	 try {
+	    		 Thread.sleep(1000);
+	    		 driver.findElement(save).click();
+	    	 }
+	    	 catch(Exception e ) {}
+	    	 
 	     }
 	     
 	    

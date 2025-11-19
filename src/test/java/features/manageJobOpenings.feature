@@ -38,9 +38,9 @@ Feature: Manage Job Openings
     And user clicks on department and enter department
     And user clicks on industry type and enter industry 
     And user clicks on tags and enter tags and hit enter 
-    #And user clicks on vendors and select
+    And user clicks on vendors and select
     #And user clicks on client and enter the clint name and select client  from dropdown 
-    #And user click on Save
+    And user click on Save
     #Then The  new jobopening is created  
     
     

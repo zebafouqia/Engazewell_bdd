@@ -206,19 +206,21 @@ public void user_clicks_on_tags_and_enter_tags_and_hit_enter() {
 @Then("user clicks on vendors and select")
 public void user_clicks_on_vendors_and_select() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+   // throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.vendors();
 }
 
 @Then("user clicks on client and enter the clint name and select client  from dropdown")
 public void user_clicks_on_client_and_enter_the_clint_name_and_select_client_from_dropdown() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+  //  throw new io.cucumber.java.PendingException();
 }
 
 @Then("user click on Save")
 public void user_click_on_save() {
     // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
+  //  throw new io.cucumber.java.PendingException();
+	manageJobopeningpage.save();
 }
 
 @Then("The  new jobopening is created")
