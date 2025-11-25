@@ -12,6 +12,7 @@ Feature: Manage Job Openings
     
     
 
+
   @job-opening 
   Scenario: Create New Job Opening
     When the user clicks on "Job Opening" in the side navigation
