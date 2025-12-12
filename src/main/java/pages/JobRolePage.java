@@ -39,7 +39,7 @@ public class JobRolePage {
     // Locators
     private By descriptionBox = By.xpath("//div[@contenteditable='true']//parent::div//span"); ////div[@contenteditable='true']
     private By successToast = By.xpath("//div[contains(text(),'Description generated successfully')]");
-    private By saveButton = By.xpath("//button[text()='Save']");
+    private By saveButton = By.xpath("//button[text()='Create']");
     
     //
     // -- Stable anchors --
@@ -111,11 +111,11 @@ public class JobRolePage {
 //             
 //    }
     
-    public void enterJobRole() {
-        By jobRoleInput = By.xpath("//label[text()='Job Role']//..//..//input[@placeholder='Enter the job role']");
+    public void enterJobRole() { ////input[@placeholder='Enter the job role']
+        By jobRoleInput = By.xpath("//input[@placeholder='Enter the job role']");
         WebElement inputFieldJobRole = wait.until(ExpectedConditions.elementToBeClickable(jobRoleInput));
         inputFieldJobRole.clear();
-        inputFieldJobRole.sendKeys("Backend Lead");
+        inputFieldJobRole.sendKeys("Frontend Lead");
         // Send TAB to trigger blur/change event quickly
         inputFieldJobRole.sendKeys(Keys.TAB);
         // small explicit wait for any JS processing after blur (use short wait)

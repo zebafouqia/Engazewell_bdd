@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de7bb90a-c9e6-4fec-a5de-e5d0ffcc0020" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../test-output/BDD Test Suite/Cucumber Tests.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../test-output/BDD Test Suite/Cucumber Tests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test-output/BDD Test Suite/Cucumber Tests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../test-output/BDD Test Suite/Cucumber Tests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test-output/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../test-output/emailable-report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test-output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../test-output/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test-output/junitreports/TEST-runners.TestRunner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../test-output/junitreports/TEST-runners.TestRunner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../test-output/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../test-output/testng-results.xml" afterDir="false" />
-    </list>
+    <list default="true" id="de7bb90a-c9e6-4fec-a5de-e5d0ffcc0020" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,9 +16,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="32BB9B21ImLHbSCEdLM6xyGHh0G" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -38,7 +31,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "engazewell__zeba",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>

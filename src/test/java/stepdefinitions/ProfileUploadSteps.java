@@ -6,7 +6,7 @@ import pages.LoginPage;
 import pages.ProfileUploadPage;
 
 
-public class ProfileUploadSteps {
+public class ProfileUploadSteps extends DriverFactory {
 	private LoginPage loginPage;
 	private ProfileUploadPage profileUploadPage;
 	

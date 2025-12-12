@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import pages.LoginPage;
 import pages.ManageJobOpeningsPage;
 
-public class ManageJobOpeningsSteps {
+public class ManageJobOpeningsSteps extends DriverFactory {
 	//private ElementUtils utils;
 	private LoginPage loginPage;
 	private ManageJobOpeningsPage manageJobopeningpage;
@@ -83,7 +83,7 @@ public void user_click_on_jobrole_field_and_dorpdown_opens() {
 public void user_selects_the_jobrole() {
     // Write code here that turns the phrase above into concrete actions
    // throw new io.cucumber.java.PendingException();
-	manageJobopeningpage.selectJobRole("Backend Lead");
+	manageJobopeningpage.selectJobRole("Frontend Lead");
 }
 
 @Then("user click on location enter the location name and select the correct location")
