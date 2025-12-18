@@ -14,7 +14,7 @@ Feature: Schedule Panel Interview
     And User clicks on create interview button
     And User clicks on job opening dropdown and selectes a job opening
     And User clicks on loaction dropdown and selects a location 
-    And User clicks on candidate email field and enters a candidate en=mail and clicks  the correct email 
+    And User clicks on candidate email field and enters a candidate email and clicks  the correct email 
     And User clicks on panel option 
     And User clicks on Date field and selectes date 
     And User clicks on startTime field and eslects start time 

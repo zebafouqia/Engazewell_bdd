@@ -115,7 +115,7 @@ public class JobRolePage {
         By jobRoleInput = By.xpath("//input[@placeholder='Enter the job role']");
         WebElement inputFieldJobRole = wait.until(ExpectedConditions.elementToBeClickable(jobRoleInput));
         inputFieldJobRole.clear();
-        inputFieldJobRole.sendKeys("Frontend Lead");
+        inputFieldJobRole.sendKeys("Frontend Lead II");
         // Send TAB to trigger blur/change event quickly
         inputFieldJobRole.sendKeys(Keys.TAB);
         // small explicit wait for any JS processing after blur (use short wait)
